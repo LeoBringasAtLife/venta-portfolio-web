@@ -1,17 +1,21 @@
 :root {
-  /* Colors */
-  --primary: #FF4444;
-  --text-main: #212121;
-  --text-muted: #666;
-  --bg-light: #f9f9f9;
-  --bg-white: #ffffff;
+  /* Colores Principales */
+  --primary: #ff4444; /* Color de acento */
+  --text-main: #212121; /* Texto principal */
+  --text-muted: #666; /* Texto secundario/suave */
+
+  /* Fondos y Superficies */
+  --bg-light: #f9f9f9; /* Fondo de secciones */
+  --bg-white: #ffffff; /* Fondo de tarjetas y blanco puro */
+
+  /* Bordes y Sombras */
   --border-color: rgba(0, 0, 0, 0.1);
   --border-light: rgba(0, 0, 0, 0.16);
 
-  /* Spacing & Layout */
+  /* Layout y Espaciado */
   --container-width: 1100px;
   --section-padding: 5em 0;
-  --transition: all 0.3s ease;
+  --transition: all 0.3s ease; /* Transición global suave */
 }
 
 html {
@@ -192,7 +196,7 @@ header {
   font-weight: 500;
 }
 
-/* ===== Contact Section ===== */
+/* ===== Sección de contacto ===== */
 .contact-section {
   padding: var(--section-padding);
 }
@@ -249,17 +253,9 @@ header {
 .contact-item a {
   color: var(--text-main);
   font-size: 0.95em;
-  text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--text-main), transparent 90%);
-  text-underline-offset: 4px;
 }
 
-.contact-item p:hover,
-.contact-item a:hover {
-  text-decoration-color: var(--text-main);
-}
-
-/* ===== Projects Section ===== */
+/* ===== Sección de proyectos ===== */
 .projects-section {
   padding: var(--section-padding);
 }
@@ -388,6 +384,7 @@ footer {
   letter-spacing: 0.5px;
 }
 
+/* ===== Media Queries ===== */
 @media screen and (max-width: 880px) {
   .navbar .container {
     display: flex;
@@ -452,7 +449,7 @@ footer {
     max-width: 400px;
   }
 
-  /* Dynamic class used later in JavaScript */
+  /* Clase dinámica utilizada más adelante en JavaScript */
   .navbar .menu-open {
     top: 5.5em;
   }
@@ -461,7 +458,7 @@ footer {
     justify-self: center;
   }
 
-  /* Responsive About Section */
+  /* Sección Acerca de Responsiva */
   .about-content {
     grid-template-columns: 1fr;
     gap: 2em;
@@ -471,7 +468,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  /* Responsive Contact Section */
+  /* Sección de contacto responsivo */
   .contact-content {
     flex-direction: column;
     align-items: center;
