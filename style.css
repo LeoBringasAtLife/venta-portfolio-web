@@ -1,12 +1,31 @@
+:root {
+  /* Colors */
+  --primary: #FF4444;
+  --text-main: #212121;
+  --text-muted: #666;
+  --bg-light: #f9f9f9;
+  --bg-white: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-light: rgba(0, 0, 0, 0.16);
+
+  /* Spacing & Layout */
+  --container-width: 1100px;
+  --section-padding: 5em 0;
+  --transition: all 0.3s ease;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Inter', sans-serif;
+  color: var(--text-main);
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -23,7 +42,7 @@ a {
 }
 
 a:hover {
-  color: #ff4444;
+  color: var(--primary);
 }
 
 header {
@@ -32,7 +51,7 @@ header {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: var(--container-width);
   margin: 0 auto;
   padding: 2em;
 }
@@ -97,7 +116,7 @@ header {
   position: absolute;
   bottom: 11px;
   right: -20px;
-  background-color: #ff4444;
+  background-color: var(--primary);
   width: 0.3em;
   height: 0.3em;
 }
@@ -105,13 +124,13 @@ header {
 .hero p {
   margin: 2em 0;
   line-height: 30px;
-  color: #212121;
+  color: var(--text-main);
 }
 
 /* ===== About Section ===== */
 .about-section {
-  padding: 5em 0;
-  background-color: #f9f9f9;
+  padding: var(--section-padding);
+  background-color: var(--bg-light);
 }
 
 .about-section h2 {
@@ -134,7 +153,7 @@ header {
 
 .about-text p {
   line-height: 1.8;
-  color: #212121;
+  color: var(--text-main);
   margin-bottom: 1.5em;
 }
 
@@ -155,18 +174,18 @@ header {
   align-items: center;
   gap: 1em;
   padding: 1em;
-  background-color: #fff;
+  background-color: var(--bg-white);
   border-radius: 8px;
-  border: 1px solid #00000029;
+  border: 1px solid var(--border-light);
 }
 
 .skill-item:hover {
-  border: 1px solid #ff4444;
+  border: 1px solid var(--primary);
 }
 
 .skill-item i {
   font-size: 1.8em;
-  color: #ff4444;
+  color: var(--primary);
 }
 
 .skill-item span {
@@ -175,7 +194,7 @@ header {
 
 /* ===== Contact Section ===== */
 .contact-section {
-  padding: 5em 0;
+  padding: var(--section-padding);
 }
 
 .contact-section h2 {
@@ -191,7 +210,7 @@ header {
 
 .contact-intro {
   text-align: center;
-  color: #212121;
+  color: var(--text-main);
   font-size: 1.1em;
   margin-bottom: 3em;
 }
@@ -203,7 +222,7 @@ header {
   flex-wrap: wrap;
   gap: 3em;
   margin-top: 3em;
-  max-width: 1100px;
+  max-width: var(--container-width);
   margin-left: auto;
   margin-right: auto;
 }
@@ -216,7 +235,7 @@ header {
 
 .contact-item i {
   font-size: 1.8em;
-  color: #ff4444;
+  color: var(--primary);
   margin-top: 0.2em;
 }
 
@@ -228,21 +247,21 @@ header {
 
 .contact-item p,
 .contact-item a {
-  color: #212121;
+  color: var(--text-main);
   font-size: 0.95em;
   text-decoration: underline;
-  text-decoration-color: rgba(33, 33, 33, 0.3);
+  text-decoration-color: color-mix(in srgb, var(--text-main), transparent 90%);
   text-underline-offset: 4px;
 }
 
 .contact-item p:hover,
 .contact-item a:hover {
-  text-decoration-color: #212121;
+  text-decoration-color: var(--text-main);
 }
 
 /* ===== Projects Section ===== */
 .projects-section {
-  padding: 5em 0;
+  padding: var(--section-padding);
 }
 
 .projects-section h2 {
@@ -263,14 +282,14 @@ header {
 }
 
 .project-card {
-  background-color: #fff;
+  background-color: var(--bg-white);
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #0000001a;
+  border: 1px solid var(--border-color);
 }
 
 .project-card:hover {
-  border-color: #ff4444;
+  border-color: var(--primary);
 }
 
 .project-image {
@@ -295,7 +314,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 68, 68, 0.9);
+  background-color: color-mix(in srgb, var(--primary), transparent 10%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -307,17 +326,16 @@ header {
 }
 
 .view-project {
-  color: #fff;
+  color: var(--bg-white);
   font-weight: 600;
   padding: 0.8em 1.5em;
-  border: 2px solid #fff;
+  border: 2px solid var(--bg-white);
   border-radius: 30px;
   text-decoration: none;
 }
 
 .view-project:hover {
-  background-color: #fff;
-  color: #ff4444;
+  color: var(--bg-white);
 }
 
 .project-info {
@@ -327,18 +345,18 @@ header {
 .project-info h3 {
   font-size: 1.2em;
   margin-bottom: 0.5em;
-  color: #212121;
+  color: var(--text-main);
 }
 
 .project-info p {
   font-size: 0.9em;
-  color: #666;
+  color: var(--text-muted);
 }
 
 /* ===== Footer ===== */
 footer {
   padding: 4em 0;
-  border-top: 1px solid #0000001a;
+  border-top: 1px solid var(--border-color);
   margin-top: 2em;
 }
 
@@ -357,16 +375,16 @@ footer {
 
 .footer-social a {
   font-size: 1.4em;
-  color: #212121;
+  color: var(--text-main);
 }
 
 .footer-social a:hover {
-  color: #ff4444;
+  color: var(--primary);
 }
 
 .footer-copy p {
   font-size: 0.9em;
-  color: #666;
+  color: var(--text-muted);
   letter-spacing: 0.5px;
 }
 
@@ -395,7 +413,7 @@ footer {
     width: 100%;
     height: auto;
     padding: 3em 0;
-    background-color: #fff;
+    background-color: var(--bg-white);
     display: flex;
     flex-direction: column;
     align-items: center;
